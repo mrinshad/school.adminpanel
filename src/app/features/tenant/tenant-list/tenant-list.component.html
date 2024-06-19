@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row d-flex justify-content-between mt-3">
+        <div class="col">
+            <h1>Tenants</h1>
+        </div>
+        <div class="col text-end">
+            <button mat-flat-button color="primary" (click)="createTenant()">
+                Add Tenant
+            </button>
+        </div>
+    </div>
+    <div class="row" *ngIf="tenants.length > 0">
+        <app-card
+            class="col-3 mb-3 tenant-item"
+            *ngFor="let tenant of tenants"
+            (click)="goToDetails(tenant)"
+        >
+            <div title>{{ tenant.Name }}</div>
+        </app-card>
+    </div>
+</div>

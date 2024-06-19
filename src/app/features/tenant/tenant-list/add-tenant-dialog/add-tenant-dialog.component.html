@@ -1,0 +1,17 @@
+<app-dialog>
+    <ng-container title>New Tenant</ng-container>
+    <mat-form-field body appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput [formControl]="formControl" autofocus />
+    </mat-form-field>
+    <button mat-button [mat-dialog-close]="" actionLeft>Cancel</button>
+    <button
+        mat-button
+        cdkFocusInitial
+        [disabled]="!formControl.valid"
+        (click)="create()"
+        actionRight
+    >
+        Create
+    </button>
+</app-dialog>

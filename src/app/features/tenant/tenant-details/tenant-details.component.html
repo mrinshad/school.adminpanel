@@ -1,0 +1,29 @@
+<div class="m-2 d-flex">
+    <button class="btn d-flex align-center outline-0" [routerLink]="'/tenant'">
+        <mat-icon class="mr-3">west</mat-icon>
+    </button>
+    <h1>{{ tenant.Name }}</h1>
+</div>
+<mat-tab-group fitInkBarToContent>
+    <mat-tab tab label="Roles - Permissions">
+        <div class="container my-3">
+            <div class="row justify-content-end mb-3">
+                <button
+                    mat-flat-button
+                    color="primary"
+                    class="w-auto"
+                    (click)="createRole()"
+                >
+                    Add Role
+                </button>
+            </div>
+            <app-roles-permissions [roles]="roles"></app-roles-permissions>
+        </div>
+    </mat-tab>
+    <mat-tab tab label="Students">
+        <div class="container">Students</div>
+    </mat-tab>
+    <mat-tab tab label="staff">
+        <div class="container">Staff</div>
+    </mat-tab>
+</mat-tab-group>

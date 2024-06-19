@@ -1,0 +1,42 @@
+<app-dialog>
+    <ng-container title>New Role</ng-container>
+    <form body [formGroup]="formGroup">
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Name</mat-label>
+                <input matInput formControlName="name" autofocus />
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>belongs to</mat-label>
+                <mat-select formControlName="belongsTo">
+                    <mat-option
+                        *ngFor="let option of belongsToOptions"
+                        [value]="option"
+                    >
+                        {{ option }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <label id="example-radio-group-label">Is default role</label>
+            <mat-radio-group formControlName="isDefault">
+                <mat-radio-button [value]="true">True</mat-radio-button>
+                <mat-radio-button [value]="false">False</mat-radio-button>
+            </mat-radio-group>
+        </div>
+    </form>
+
+    <button mat-button [mat-dialog-close]="" actionLeft>Cancel</button>
+    <button
+        mat-button
+        cdkFocusInitial
+        [disabled]="!formGroup.valid"
+        (click)="create()"
+        actionRight
+    >
+        Create
+    </button>
+</app-dialog>

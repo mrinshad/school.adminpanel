@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Run 'ng serve'
+ng serve

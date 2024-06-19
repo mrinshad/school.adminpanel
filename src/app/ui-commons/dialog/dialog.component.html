@@ -1,0 +1,17 @@
+<div>
+    <h1 mat-dialog-title class="mb-0">
+        <ng-content select="[title]"></ng-content>
+    </h1>
+    <mat-dialog-content class="pt-3 pb-0">
+        <ng-content select="[body]"></ng-content>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <ng-content select="[actions]"></ng-content>
+        <div class="mr-3">
+            <ng-content select="[actionLeft]"></ng-content>
+        </div>
+        <div>
+            <ng-content select="[actionRight]"></ng-content>
+        </div>
+    </mat-dialog-actions>
+</div>

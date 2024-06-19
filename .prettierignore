@@ -1,0 +1,9 @@
+node_modules/
+.angular/
+dist/
+.local
+favicon.ico
+
+# editors
+.vscode
+!.vscode/extension.json

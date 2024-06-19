@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="row d-flex justify-content-center align-items-center vh-100">
+        <div class="col-md-6">
+            <mat-card>
+                <mat-card-header class="justify-content-center mb-3">
+                    <mat-card-title>Sign In</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                        <div class="row">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Username</mat-label>
+                                <input matInput formControlName="username" />
+                                <mat-icon matSuffix class="text-dark"
+                                    >face</mat-icon
+                                >
+                            </mat-form-field>
+                        </div>
+                        <div class="row">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Password</mat-label>
+                                <input
+                                    matInput
+                                    formControlName="password"
+                                    [type]="hide ? 'password' : 'text'"
+                                />
+                                <a
+                                    href="#"
+                                    onClick="return false;"
+                                    matSuffix
+                                    (click)="hide = !hide"
+                                    [attr.aria-label]="'Hide password'"
+                                    [attr.aria-pressed]="hide"
+                                >
+                                    <mat-icon matSuffix class="m-3 text-dark">{{
+                                        hide ? 'visibility_off' : 'visibility'
+                                    }}</mat-icon>
+                                </a>
+                            </mat-form-field>
+                        </div>
+                        <mat-card-actions class="justify-content-center">
+                            <button
+                                mat-flat-button
+                                color="primary"
+                                [class.auth-spinner]="loading"
+                                [disabled]="loading"
+                                [disabled]="!form.valid"
+                                type="submit"
+                                type="submit"
+                            >
+                                Sign In
+                            </button>
+                        </mat-card-actions>
+                    </form>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>

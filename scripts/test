@@ -1,0 +1,14 @@
+#!/bin/bash
+
+cd "$(dirname "$0")"/..
+# Run ESLint for linting
+echo "Checking for ESLint errors..."
+npm run lint
+
+# Run Prettier check for code formatting
+echo "Checking code formatting with Prettier..."
+npx prettier --check src/*
+
+# Run Angular tests
+# echo "Running Angular tests..."
+# ng test

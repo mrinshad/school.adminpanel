@@ -1,0 +1,55 @@
+<div *ngIf="roles && selected" class="row vh-90">
+    <div class="col-3">
+        <h2>Roles</h2>
+        <mat-selection-list
+            [multiple]="false"
+            (selectionChange)="onSelectionChange($event)"
+        >
+            <mat-list-option
+                *ngFor="let role of roles; let first = first"
+                [value]="role"
+                [selected]="first"
+                >{{ role.name }}</mat-list-option
+            >
+        </mat-selection-list>
+    </div>
+    <div class="col-6">
+        <div class="row">
+            <div class="col">
+                <h2>Permissions</h2>
+            </div>
+            <div class="col text-end">
+                <mat-form-field>
+                    <input
+                        type=" text"
+                        [formControl]="searchInput"
+                        matInput
+                        placeholder="Search"
+                    />
+                </mat-form-field>
+            </div>
+        </div>
+        <mat-selection-list #permissionList>
+            <mat-list-option
+                *ngFor="let permission of filteredPermissions"
+                [value]="permission"
+            >
+                {{ permission }}
+            </mat-list-option>
+        </mat-selection-list>
+
+        <div class="row justify-content-center my-3">
+            <button
+                class="w-auto mx-3"
+                mat-flat-button
+                color="accent"
+                (click)="save()"
+            >
+                Save
+            </button>
+            <button class="w-auto mx-3" mat-flat-button color="warn">
+                Delete
+            </button>
+        </div>
+    </div>
+</div>

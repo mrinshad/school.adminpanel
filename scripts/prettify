@@ -1,0 +1,14 @@
+#!/bin/bash
+
+cd "$(dirname "$0")"/..
+# Run ESLint for linting
+git config core.autocrlf true
+git config core.autocrlf input
+
+
+# Run Prettier check for code formatting
+npx prettier --write "src/**/*.ts" "src/**/*.html" "src/**/*.scss" "src/**/*.json"
+
+# Run Angular tests
+# echo "Running Angular tests..."
+# ng test

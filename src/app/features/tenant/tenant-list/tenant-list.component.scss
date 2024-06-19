@@ -1,0 +1,22 @@
+@use '@angular/material' as mat;
+
+app-card {
+    .mat-mdc-card.mdc-card {
+        background-color: #f8f9fa;
+        cursor: pointer;
+        transition: box-shadow 0.3s ease;
+
+        &:hover {
+            @include mat.elevation(2);
+        }
+
+        .mat-mdc-card-header,
+        .mat-mdc-card-title {
+            justify-content: center;
+        }
+
+        mat-card-actions.mdc-card__actions {
+            justify-content: center;
+        }
+    }
+}
